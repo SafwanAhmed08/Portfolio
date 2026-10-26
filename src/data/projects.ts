@@ -2,7 +2,7 @@ export const projects = [
 {
  number:'01', slug:'study-planner', title:'Study Planner', type:'AI × FULL STACK', repo:'study_planner', status:'Local, single-user application',
  description:'A personal study workspace that turns uploaded PDFs into searchable course material, AI-assisted explanations, quizzes, flashcards, and prioritized study schedules.',
- tags:['Next.js','TypeScript','FastAPI','ChromaDB','Docker'],
+ tags:['RAG','Docker','ChromaDB','LLM','FastAPI','TypeScript'],
  problem:'Course notes, revision tools, and study plans often live in separate places. Study Planner connects personal course material with active recall and scheduling in one local workspace.',
  architecture:'A Next.js and React frontend calls a FastAPI backend through an Axios client. SQLAlchemy manages topics, subtopics, documents, and schedule items in SQLite. ChromaDB stores document chunks and embeddings, while an OpenAI-compatible endpoint supplies the language model. Docker Compose keeps application data and model caches in separate persistent volumes.',
  flow:['Upload a PDF and associate it with a topic. A SHA-256 hash detects previously indexed files.','Extract text with pypdf, clean it, and split it into 1,000-character chunks with 200-character overlap.','Generate all-MiniLM-L6-v2 embeddings and store chunks with source, topic, and file-hash metadata in ChromaDB.','Retrieve up to 20 candidates, optionally filtered by topic, and rerank them with a cross-encoder.','Supply the top three chunks to the LLM for explanations, multiple-choice quizzes, or flashcards.'],
