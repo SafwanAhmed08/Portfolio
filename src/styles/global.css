@@ -30,3 +30,9 @@ header.nav{position:sticky;top:0;z-index:20;background:#111514f5;backdrop-filter
 @media(max-width:700px){.projects-grid{grid-template-columns:1fr;gap:18px}.projects-grid .project,.projects-grid .project+.project{padding:25px}.projects-grid .project-info h3{font-size:25px}}
 
 footer .orcid-link{font-size:11px;color:var(--accent)}@media(max-width:450px){footer{flex-wrap:wrap;gap:18px}}
+
+.featured-hackathon{border:1px solid #6f9c80;background:linear-gradient(120deg,#1d3025,#151a17);border-radius:5px;padding:34px;margin-bottom:24px;display:flex;gap:40px;align-items:center;justify-content:space-between}.featured-hackathon>div{max-width:670px}.featured-hackathon h3{font-size:36px;letter-spacing:-1.2px;font-weight:500;margin:20px 0 15px}.featured-hackathon p{font-size:15px;line-height:1.9;color:var(--muted)}.featured-hackathon .eyebrow{color:var(--accent);line-height:1.8}.featured-hackathon .tags{margin-bottom:0}.featured-hackathon>.button{flex-shrink:0;gap:20px}@media(max-width:1000px){.featured-hackathon{align-items:flex-start;flex-direction:column;gap:25px}}@media(max-width:700px){.featured-hackathon{padding:25px}.featured-hackathon h3{font-size:30px}}
+
+.featured-hackathon .featured-tagline{font-size:19px;color:#e3eee6;margin-bottom:14px;line-height:1.5}
+
+.source-note,.featured-hackathon .source-note{font-size:12px;color:var(--accent);margin-top:16px;line-height:1.6}

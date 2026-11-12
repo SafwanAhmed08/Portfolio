@@ -12,7 +12,8 @@ const repo = `https://github.com/SafwanAhmed08/${project.repo}`;
 <a class="text-link" href="/#work">← Back to selected work</a>
 <div class="eyebrow case-kicker">PROJECT {project.number} / {project.type}</div>
 <h1>{project.title}</h1><p class="case-lead">{project.description}</p>
-<div class="case-meta"><span class="case-status"><span class="dot"></span>{project.status}</span><a class="text-link" href={repo} target="_blank" rel="noopener noreferrer">View source on GitHub ↗</a></div>
+<div class="case-meta"><span class="case-status"><span class="dot"></span>{project.status}</span>{project.repo && <a class="text-link" href={repo} target="_blank" rel="noopener noreferrer">View source on GitHub ↗</a>}</div>
+{project.slug === 'groundwork' && <p class="source-note">Source code coming soon</p>}
 <ul class="tags">{project.tags.map(tag=><li>{tag}</li>)}</ul>
 <section class="case-section"><h2>The idea</h2><p>{project.problem}</p></section>
 <section class="case-section"><h2>How it fits together</h2><p>{project.architecture}</p></section>
@@ -20,7 +21,7 @@ const repo = `https://github.com/SafwanAhmed08/${project.repo}`;
 <section class="case-section"><h2>Engineering decisions</h2><div class="case-decisions">{project.decisions.map(([title,body])=><div><h3>{title}</h3><p>{body}</p></div>)}</div></section>
 <section class="case-section"><h2>Technology stack</h2><ul class="case-stack">{project.stack.map(item=><li>{item}</li>)}</ul></section>
 <section class="case-section"><h2>Current scope & next steps</h2><p>{project.scope}</p></section>
-<section class="case-section case-sources"><h2>Explore the implementation</h2><p>Based on the repository documentation and source code. Runtime performance and external integrations have not been independently tested.</p><ul>{project.sources.map(path=><li><a href={`${repo}/blob/main/${path}`} target="_blank" rel="noopener noreferrer">{path} ↗</a></li>)}</ul></section>
+{project.repo && <section class="case-section case-sources"><h2>Explore the implementation</h2><p>Based on the repository documentation and source code. Runtime performance and external integrations have not been independently tested.</p><ul>{project.sources.map(path=><li><a href={`${repo}/blob/main/${path}`} target="_blank" rel="noopener noreferrer">{path} ↗</a></li>)}</ul></section>}
 <div class="case-next"><span class="eyebrow">KEEP EXPLORING</span>{projects.filter(p=>p.slug!==project.slug).map(p=><a href={`/projects/${p.slug}/`}>{p.title} ↗</a>)}</div>
 </main><footer class="wrap"><a class="brand" href="/">sa<span>.</span></a><span>© {new Date().getFullYear()} Safwan Ahmed</span><a href="/#work">All projects ↑</a></footer>
 </Layout>
